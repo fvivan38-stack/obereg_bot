@@ -37,4 +37,4 @@ MAINTENANCE_MODE = False  # False - бот работает, True - бот на 
 PROXY_URL = "socks5://user363083:a0mpz5@185.210.155.37:16506"
 
 # Включить/выключить прокси
-USE_PROXY = True  # True - использовать прокси, False - не использовать
+USE_PROXY = False  # True - использовать прокси, False - не использовать
