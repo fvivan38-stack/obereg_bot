@@ -10,17 +10,28 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, LinkPreviewOptions
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InputMediaPhoto
-
+from aiogram.client.session.aiohttp import AiohttpSession
 import config
 from database import *
 
 # ========== НАСТРОЙКА ПРОКСИ ==========
 # ========== СОЗДАНИЕ БОТА С ПРОКСИ ==========
-# Просто создаём бота
-from aiogram import Bot, Dispatcher
+async def create_bot_with_proxy():
+    """Создание бота с прокси"""
+    if config.USE_PROXY:
+        # Создаём сессию с прокси
+        session = AiohttpSession(proxy=config.PROXY_URL)
+        print(f"🔵 Используется прокси: {config.PROXY_URL}")
+        # Убираем DefaultBotProperties, используем простой способ
+        return Bot(token=config.BOT_TOKEN, session=session)
+    else:
+        print("🔵 Прокси не используется")
+        return Bot(token=config.BOT_TOKEN)
 
-bot = Bot(token=config.BOT_TOKEN)
+# Создаём бота (будет создан в main)
+bot = None
 dp = Dispatcher()
+init_db()
 
 
 
@@ -2597,6 +2608,8 @@ async def admin_manage_collections(callback: types.CallbackQuery):
     await callback.message.edit_text("📁 УПРАВЛЕНИЕ КОЛЛЕКЦИЯМИ\n\nВыберите коллекцию:", reply_markup=builder.as_markup())
 
 
+# ========== РЕДАКТИРОВАНИЕ КОЛЛЕКЦИЙ ==========
+
 @dp.callback_query(F.data.startswith("edit_col_"))
 async def edit_collection_menu(callback: types.CallbackQuery, state: FSMContext):
     if not is_admin(callback.from_user.id):
@@ -2621,7 +2634,7 @@ async def edit_collection_menu(callback: types.CallbackQuery, state: FSMContext)
     try:
         await callback.message.edit_text(text, reply_markup=builder.as_markup())
     except:
-        pass
+        await callback.message.answer(text, reply_markup=builder.as_markup())
 
 
 @dp.callback_query(F.data.startswith("edit_col_name_"))
@@ -2642,6 +2655,13 @@ async def edit_collection_name_start(callback: types.CallbackQuery, state: FSMCo
 async def edit_collection_name_save(message: types.Message, state: FSMContext):
     data = await state.get_data()
     col_id = data.get('edit_collection_id')
+
+    if not col_id:
+        await message.answer("❌ Ошибка: ID коллекции не найден")
+        await state.clear()
+        await admin_panel(message)
+        return
+
     update_collection(col_id, name=message.text)
     await message.answer(f"✅ Название изменено на: {message.text}")
     await state.clear()
@@ -2702,7 +2722,6 @@ async def edit_collection_photo_save(message: types.Message, state: FSMContext):
         return
     await state.clear()
     await admin_panel(message)
-
 
 @dp.callback_query(F.data.startswith("delete_col_"))
 async def delete_collection_confirm(callback: types.CallbackQuery):
@@ -3149,8 +3168,19 @@ async def get_photo_id(message: types.Message):
 
 # ========== ЗАПУСК ==========
 async def main():
+    global bot
+    bot = await create_bot_with_proxy()
     print("✅ Бот запущен!")
     print(f"Администраторы: {config.ADMIN_IDS}")
+
+    # Проверяем, что бот может подключиться к Telegram
+    try:
+        me = await bot.get_me()
+        print(f"✅ Бот подключен: @{me.username}")
+    except Exception as e:
+        print(f"❌ Ошибка подключения: {e}")
+        return
+
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
