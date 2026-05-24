@@ -1,0 +1,651 @@
+SQLite format 3   @     f              
+                                                 f .Љ   ы    ыЕ	 Љятµtt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                7K% indexsqlite_autoindex_group_orders_1group_orders
+       ‚:
+ ))„/tableadmin_messagesadmin_messagesCREATE TABLE admin_messages (id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            message_text TEXT,
+            created_at TEXT,
+            is_read INTEGER DEFAULT 0,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚
+	 ##ѓ[tablelink_clickslink_clicks
+CREATE TABLE link_clicks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            username TEXT,
+            click_date TEXT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚ ''ѓotablemenu_settingsmenu_settings	CREATE TABLE menu_settings (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            photo_file_id TEXT,
+            welcome_text TEXT,
+            channel_link TEXT,
+            chat_link TEXT,
+            support_links TEXT
+        )‚m  …1tablereviewsreviewsCREATE TABLE reviews (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            user_name TEXT,
+            review_text TEXT,
+            rating INTEGER,
+            created_at TEXT,
+            is_approved INTEGER DEFAULT 0,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )ѓ  …qtablecartcart CREATE TABLE cart (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            quantity INTEGER DEFAULT 1,
+            size TEXT,
+            added_at TEXT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id),
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        )…. Љ7tableordersordersCREATE TABLE orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            quantity INTEGER DEFAULT 1,
+            total_price INTEGER NOT NULL,
+            size TEXT,
+            delivery_city TEXT,
+            delivery_address TEXT,
+            phone TEXT,
+            delivery_date TEXT,
+            delivery_time TEXT,
+            status TEXT DEFAULT 'pending',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(user_id),
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        )ѓ4 †;tableproductsproductsCREATE TABLE products (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            collection_id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            description TEXT,
+            price INTEGER NOT NULL,
+            photo_file_id TEXT,
+            is_active INTEGER DEFAULT 1,
+            sort_order INTEGER DEFAULT 0,
+            FOREIGN KEY (collection_id) REFERENCES collections(id)
+        )P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)‚) ##„tablecollectionscollectionsCREATE TABLE collections (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            description TEXT,
+            photo_file_id TEXT,
+            is_active INTEGER DEFAULT 1,
+            sort_order INTEGER DEFAULT 0
+        )‚ ѓetableusersusersCREATE TABLE users (
+            user_id INTEGER PRIMARY KEY,
+            username TEXT,
+            first_name TEXT,
+            last_name TEXT,
+            phone TEXT,
+            address TEXT,
+            registered_at TEXT
+        
+    lК6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *–ўха    Ameoaoawf2026-05-24T01:11:58.0915420ћҐМћX #   Askywaqheroesk.2026-05-24T01:11:14.139788X†ЭБб - #?AKill_Me_0bladaet<289818554805РљРѕРІР°Р»РµРІСЃРєР°СЏ 262026-05-23T23:43:13.7811190—Р¤ж  #   AtgKosolapovTsm2026-05-23T23:15:43.530556
+	a  2Џ АА€z	 7ђЃ3	White Night GuardiansWhite Night GuardiansВ РІРґРѕС…РЅРѕРІР»РµРЅР° Р°С‚РјРѕСЃС„РµСЂРѕР№ Р±РµР»С‹С… РЅРѕС‡РµР№, Р°РЅРіРµР»СЊСЃРєРѕР№ СЃРёРјРІРѕР»РёРєРѕР№ Рё РјРµС‡С‚Р°С‚РµР»СЊРЅС‹Рј РЅР°СЃС‚СЂРѕРµРЅРёРµРј РЅРѕС‡РЅРѕРіРѕ РіРѕСЂРѕРґР°. РљРѕР»Р»РµРєС†РёСЏ СЃРѕС‡РµС‚Р°РµС‚ СЂРѕРјР°РЅС‚РёРєСѓ, РІРёРЅС‚Р°Р¶РЅСѓСЋ СЌСЃС‚РµС‚РёРєСѓ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Рµ streetwear-СЌР»РµРјРµРЅС‚С‹.
+РћР±СЂР°Р·С‹ Р°РЅРіРµР»РѕРІ, РјСЏРіРєРёРµ РѕС‚С‚РµРЅРєРё СЂРѕР·РѕРІРѕРіРѕ, РєРѕРЅС‚СЂР°СЃС‚РЅС‹Рµ С‡С‘СЂРЅРѕ-Р±РµР»С‹Рµ СЂРµС€РµРЅРёСЏ Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅР°СЏ С‚РёРїРѕРіСЂР°С„РёРєР°РїРµСЂРµРґР°СЋС‚ РёРґРµРё Р·Р°С‰РёС‚С‹, РІРµСЂС‹ РІ РјРµС‡С‚Сѓ Рё РІРЅСѓС‚СЂРµРЅРЅРµРіРѕ СЃРІРµС‚Р°. РљР°Р¶РґР°СЏ С„СѓС‚Р±РѕР»РєР° РІС‹РіР»СЏРґРёС‚ РєР°Рє РѕС‚РґРµР»СЊРЅР°СЏ РёСЃС‚РѕСЂРёСЏ вЂ” Рѕ РІРґРѕС…РЅРѕРІРµРЅРёРё, Р»СЋР±РІРё, С‚РІРѕСЂС‡РµСЃС‚РІРµ Рё СЃРІРѕР±РѕРґРµ СЃР°РјРѕРІС‹СЂР°Р¶РµРЅРёСЏ.
+Р­С‚Рѕ РєРѕР»Р»РµРєС†РёСЏ РґР»СЏ С‚РµС…, РєС‚Рѕ Р¶РёРІС‘С‚ С‡СѓРІСЃС‚РІР°РјРё, С†РµРЅРёС‚ Р°С‚РјРѕСЃС„РµСЂСѓ РЅРѕС‡РЅРѕРіРѕ РіРѕСЂРѕРґР° Рё РїСЂРµРІСЂР°С‰Р°РµС‚ СЌРјРѕС†РёРё РІ СЃС‚РёР»СЊ.AgACAgIAAxkBAAIY6moSEi9rMP0BLg1JVkOo-T5LF8PIAAJyGGsbHuKZSEV_1-WmokceAQADAgADeQADOwQ‰O	 %‘[Ѓ3	812 Heritage812 HeritageВ вЂ” РєРѕР»Р»РµРєС†РёСЏ, РїРѕСЃРІСЏС‰С‘РЅРЅР°СЏ РєСѓР»СЊС‚СѓСЂРЅРѕРјСѓ РєРѕРґСѓ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. РђСЂС…РёС‚РµРєС‚СѓСЂР°, СЂР°Р·РІРѕРґРЅС‹Рµ РјРѕСЃС‚С‹, РєР»Р°СЃСЃРёС‡РµСЃРєРёРµ СЃРёР»СѓСЌС‚С‹ РіРѕСЂРѕРґР° Рё СЃРёРјРІРѕР»РёРєР° В«812В» РѕР±СЉРµРґРёРЅСЏСЋС‚СЃСЏ РІ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РіСЂР°С„РёС‡РµСЃРєРёР№ СЃС‚РёР»СЊ.
+РљРѕРЅС‚СЂР°СЃС‚ С‡С‘СЂРЅРѕРіРѕ Рё Р±РµР»РѕРіРѕ РїРѕРґС‡С‘СЂРєРёРІР°РµС‚ С…Р°СЂР°РєС‚РµСЂ РџРµС‚РµСЂР±СѓСЂРіР°: РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ СЃС‚СЂРѕРіРёР№ Рё СЂРѕРјР°РЅС‚РёС‡РЅС‹Р№, РёСЃС‚РѕСЂРёС‡РµСЃРєРёР№ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№. Р”РёР·Р°Р№РЅС‹ РїРµСЂРµРґР°СЋС‚ СЌСЃС‚РµС‚РёРєСѓ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹ С‡РµСЂРµР· СѓСЂР±Р°РЅРёСЃС‚РёС‡РµСЃРєРёРµ РєРѕР»Р»Р°Р¶Рё, Р°СЂС…РёС‚РµРєС‚СѓСЂРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ Рё РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅСѓСЋ РєРѕРјРїРѕР·РёС†РёСЋ.
+812 HeritageВ вЂ” СЌС‚Рѕ РЅРµ РїСЂРѕСЃС‚Рѕ РѕРґРµР¶РґР°, Р° РІРёР·СѓР°Р»СЊРЅРѕРµ РѕС‚СЂР°Р¶РµРЅРёРµ РіРѕСЂРѕРґР° СЃ РѕСЃРѕР±РѕР№ Р°С‚РјРѕСЃС„РµСЂРѕР№. РљРѕР»Р»РµРєС†РёСЏ РґР»СЏ С‚РµС…, РєС‚Рѕ С‡СѓРІСЃС‚РІСѓРµС‚ СЃРІСЏР·СЊ СЃ РџРµС‚РµСЂР±СѓСЂРіРѕРј Рё С…РѕС‡РµС‚ РЅРѕСЃРёС‚СЊ РµРіРѕ СЃС‚РёР»СЊ РЅР° СЃРµР±Рµ.AgACAgIAAxkBAAIY42oSEiRrQHtI3FFAFaOLnm0nywghAAJxGGsbHuKZSI5px2RJ8DLjAQADAgADeQADOwQ  С E‘CЃ3	рџ‘‘ РђР”РњРРќ-РџРђРќР•Р›Р¬РљРѕР»Р»РµРєС†РёСЏВ Le Jardin du PalaisВ вЂ” СЌС‚Рѕ СЃРѕС‡РµС‚Р°РЅРёРµ СЌСЃС‚РµС‚РёРєРё РєРѕРЅС‚СЂР°СЃС‚Р°, РІРЅСѓС‚СЂРµРЅРЅРµР№ РіР°СЂРјРѕРЅРёРё Рё С†РІРµС‚РѕС‡РЅРѕР№ СЃРёРјРІРѕР»РёРєРё. Р§С‘СЂРЅРѕ-Р±РµР»РѕРµ СЂР°Р·РґРµР»РµРЅРёРµ РѕС‚СЂР°Р¶Р°РµС‚ РґСѓР°Р»СЊРЅРѕСЃС‚СЊ Р»РёС‡РЅРѕСЃС‚Рё: СЃРёР»Сѓ Рё РјСЏРіРєРѕСЃС‚СЊ, С…Р°РѕСЃ Рё СЃРїРѕРєРѕР№СЃС‚РІРёРµ, РЅРµСЃРѕРІРµСЂС€РµРЅСЃС‚РІРѕ Рё РєСЂР°СЃРѕС‚Сѓ. Р“СЂР°С„РёРєР° СЃ С†РІРµ‰J	 3‘CЃ3	Le Jardin du PalaisРљРѕР»Р»РµРєС†РёСЏВ Le Jardin du PalaisВ вЂ” СЌС‚Рѕ СЃРѕС‡РµС‚Р°РЅРёРµ СЌСЃС‚РµС‚РёРєРё РєРѕРЅС‚СЂР°СЃС‚Р°, РІРЅСѓС‚СЂРµРЅРЅРµР№ РіР°СЂРјРѕРЅРёРё Рё С†РІРµС‚РѕС‡РЅРѕР№ СЃРёРјРІРѕР»РёРєРё. Р§С‘СЂРЅРѕ-Р±РµР»РѕРµ СЂР°Р·РґРµР»РµРЅРёРµ РѕС‚СЂР°Р¶Р°РµС‚ РґСѓР°Р»СЊРЅРѕСЃС‚СЊ Р»РёС‡РЅРѕСЃС‚Рё: СЃРёР»Сѓ Рё РјСЏРіРєРѕСЃС‚СЊ, С…Р°РѕСЃ Рё СЃРїРѕРєРѕР№СЃС‚РІРёРµ, РЅРµСЃРѕРІРµСЂС€РµРЅСЃС‚РІРѕ Рё РєСЂР°СЃРѕС‚Сѓ. Р“СЂР°С„РёРєР° СЃ С†РІРµС‚Р°РјРё Рё СѓС‚РѕРЅС‡С‘РЅРЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№ СЃРѕР·РґР°С‘С‚ Р°С‚РјРѕСЃС„РµСЂСѓ СЃРѕРІСЂРµРјРµРЅРЅРѕРіРѕ Р°СЂС‚-РґРёР·Р°Р№РЅР° СЃ С„СЂР°РЅС†СѓР·СЃРєРёРј РЅР°СЃС‚СЂРѕРµРЅРёРµРј.
+РљР°Р¶РґР°СЏ РјРѕРґРµР»СЊ РЅРµСЃС‘С‚ СЃРѕР±СЃС‚РІРµРЅРЅС‹Р№ РїРѕСЃС‹Р»:
+вЂ” РїСЂРёРЅРёРјР°С‚СЊ СЃРІРѕРё РѕСЃРѕР±РµРЅРЅРѕСЃС‚Рё,
+вЂ” РѕСЃС‚Р°РІР°С‚СЊСЃСЏ РІРµСЂРЅС‹Рј СЃРµР±Рµ,
+вЂ” СЂР°СЃС‚Рё С‡РµСЂРµР· Р¶РёР·РЅРµРЅРЅС‹Р№ РѕРїС‹С‚,
+вЂ” СЂР°СЃС†РІРµС‚Р°С‚СЊ РІ СЃРІРѕС‘Рј С‚РµРјРїРµ.
+Le Jardin du PalaisВ вЂ” СЌС‚Рѕ РѕРґРµР¶РґР° РєР°Рє РІРёР·СѓР°Р»СЊРЅС‹Р№ РјР°РЅРёС„РµСЃС‚ Р»РёС‡РЅРѕСЃС‚Рё. Р”Р»СЏ С‚РµС…, РєС‚Рѕ РІРёРґРёС‚ СЌСЃС‚РµС‚РёРєСѓ РІ РіР»СѓР±РёРЅРµ Рё С†РµРЅРёС‚ СЃРјС‹СЃР» РІ РґРµС‚Р°Р»СЏС….AgACAgIAAxkBAAIY32oSEhhBMvIWcmonv0l9HhIWC7hgAAJwGGsbHuKZSOpIA0MUEwUrAQADAgADeQADOwQQ
+ґ ‹ оЭПЕ‹ќ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       %group_orders/group_order_items
+   	group_orderscartproducts!#collections'	menu_settings   
+О    ыцсмзвЭШУОдHH                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Ѓ
+ AKЃ3	CathГ©drales de Brume darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX02oSAsSkv1fLuVL8h3ueJLOJkLkzAAKFGGsbAY6QSNbAFKTEXfY8AQADAgADdwADOwQЃ
+ CKЃ3	CathГ©drales de Brume lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX0WoSArlv_KgysewWXjuP1nmr8o1kAAKEGGsbAY6QSNAyNUmITdWuAQADAgADdwADOwQЃ
+ 3KЃ3	Г‰lГ©gance 812 darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIXz2oSAqTeaL-ZeW97bhNuWaYRz34HAAKDGGsbAY6QSOaAAYTjU7_KAQADAgADdwADOwQЃ
+ 5KЃ3	Г‰lГ©gance 812 lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIXzWoSAp95Yk5N5IyAETqWeyYlOwlsAAKCGGsbAY6QSPwIbllqV8ddAQADAgADdwADOwQ   њ =OЃ3	LвЂ™Г‚me de la Neva darkРѕРїРёСЃР°РЅРёРµ С‚СЂРµС‚СЊРµРіРѕ
+«AgACAgIAAxkBAAIXy2oSAnmOliEjMx9k1eVj7BL3gTuXAAJ9GGsbAY6QSOtfxtfGvIIuAQADAgADdwADOwQЃ
+
+ ?KЃ3	LвЂ™Г‚me de la Neva lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIXyWoSAnBceflrlGhZRVr0dsRUhmJPAAJ8GGsbAY6QSPs7yY67SQfDAQADAgADdwADOwQЃ 	
+ 71Ѓ3	ModernitГ© ImpГ©rialeРїСЂРёРІРµС‚РёРєРё
+«AgACAgIAAxkBAAIXwmoSAdTybozQ-N4uj0E-3oiZmoaMAAIIImsbbaWRSH6vekVe2eysAQADAgADdwADOwQB	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B 	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«B	 ;K
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«‰4
+ ;’-
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG. РќР° РіСЂСѓРґРё СЂР°СЃРїРѕР»РѕР¶РµРЅ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї, Р° РЅР° СЃРїРёРЅРµ вЂ” РєСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ СЃ СЂР°Р·РІРµРґРµРЅРЅС‹РјРё РјРѕСЃС‚Р°РјРё Рё Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. Р”РёР·Р°Р№РЅ РґРѕРїРѕР»РЅСЏСЋС‚ РЅР°РґРїРёСЃРё вЂњSAINT PETERSBURGвЂќ Рё вЂњCULTURAL CODEвЂќ, СЃРѕР·РґР°РІР°СЏ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РіРѕСЂРѕРґСЃРєРѕР№ РѕР±СЂР°Р· СЃ Р°С‚РјРѕСЃС„РµСЂРѕР№ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹. Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё Р°РєС†РµРЅС‚РЅРѕР№, РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… Рё РїРѕРІСЃРµРґРЅРµРІРЅС‹С… streetwear-РѕР±СЂР°Р·РѕРІ. РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё: вЂў Р¦РІРµС‚: Р±РµР»С‹Р№ вЂў РљСЂРѕР№: oversize вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚ вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ вЂў РђРІС‚РѕСЂСЃРєР°СЏ РіСЂР°С„РёРєР° OBEREG вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex  вЂў РџРѕРґС…РѕР                               	
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+   Х Х0000                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ((  Ak°p–	S2026-05-24T02:38:48.147245   {	Ak°p–S2026-05-24T02:37:23.096881   R	Ak°p–S2026-05-24T02:34:47.137563   )	Ak°p–S2026-05-24T02:31:47.805231)  	A діXS2026-05-24T01:15:25.172047
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+   & &                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ЃW	 Ѓ3Ѓ1)EAgACAgIAAxkBAAIYy2oSEZjRgYazJF3K84wFru9CICmHAAJtGGsbHuKZSFnpWUHRm8CRAQADAgADeQADOwQР”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ РјР°РіР°Р·РёРЅ РѕРґРµР¶РґС‹!@РІР°С€_РєР°РЅР°Р»@РІР°С€_С‡Р°С‚@РІР°С€Р°_РїРѕРґРґРµСЂР¶РєР°
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+) л лЗ
+‹                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Ѓ
+ /?#!#AAk°p–ORD-20260524-8304RspbРљРѕРІР°Р»РµРІСЃРєР°СЏ 26898185548052026-05-2612:00-14:00delivered2026-05-24T01:34:15.0492032026-05-24T02:39:43.698166Ѓ
+ /?#!#AAk°p–ORD-20260524-9278_­spbРљРѕРІР°Р»РµРІСЃРєР°СЏ 26898185548052026-05-2712:00-14:00shipped2026-05-24T02:39:00.8555162026-05-24T02:39:25.023127e ћ /?#!#AAk°p–ORD-20260524-8304RspbРљРѕРІР°Р»РµРІСЃРєР°СЏ 26898185548052026-05-2612:00-14:00shipped2026-05-24T01:34:15.0492032026-05-24T01:42:41.767681Ѓ
+ /?#!#AAk°p–ORD-20260524-4805VspbРљРѕРІР°Р»РµРІСЃРєР°СЏ 26898185548052026-05-2612:00-14:00shipped2026-05-24T01:40:41.7425592026-05-24T01:41:19.891808   › /?#!#AAk°p–ORD-20260524-9278_­spbРљРѕРІР°Р»РµРІСЃРєР°СЏ 26898185548052026-05-2712:00-14:00paid2026-05-24T02:39:00.8555162026-05-24T02:39:09.620720
+   ї Хлї                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 /ORD-20260524-9278/ORD-20260524-4805/	ORD-20260524-8304
+     ъ
+О
+|Е	 Љятµ 1t­               „@ %%€Ctablegroup_ordersgroup_ordersCREATE TABLE group_orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            order_number TEXT UNIQUE,
+            total_price INTEGER NOT NULL,
+            delivery_city TEXT,
+            delivery_address TEXT,
+            phone TEXT,
+            delivery_date TEXT,
+            delivery_time TEXT,
+            status TEXT DEFAULT 'pending',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )7K% indexsqlite_autoindex_group_orders_1group_orders
+  m    ‚:
+ ))„/tableadmin_messagesadmin_messagesCREATE TABLE admin_messages (id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            message_text TEXT,
+            created_at TEXT,
+            is_read INTEGER DEFAULT 0,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚
+	 ##ѓ[tablelink_clickslink_clicks
+CREATE TABLE link_clicks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            username TEXT,
+            click_date TEXT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚ ''ѓotablemenu_settingsmenu_settings	CREATE TABLE menu_settings (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            photo_file_id TEXT,
+            welcome_text TEXT,
+            channel_link TEXT,
+            chat_link TEXT,
+            support_links TEXT
+        )‚m  …1tablereviewsreviewsCREATE TABLE reviews (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            user_name TEXT,
+            review_text TEXT,
+            rating INTEGER,
+            created_at TEXT,
+            is_approved INTEGER DEFAULT 0,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )ѓ  …qtablecartcart CREATE TABLE cart (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            quantity INTEGER DEFAULT 1,
+            size TEXT,
+            added_at TEXT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id),
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        )…. Љ7tableordersordersCREATE TABLE orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            quantity INTEGER DEFAULT 1,
+            total_price INTEGER NOT NULL,
+            size TEXT,
+            delivery_city TEXT,
+            delivery_address TEXT,
+            phone TEXT,
+            delivery_date TEXT,
+            delivery_time TEXT,
+            status TEXT DEFAULT 'pending',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(user_id),
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        )ѓ4 †;tableproductsproductsCREATE TABLE products (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            collection_id INTEGER NOT NULL,
+            name TEXT NOT NULL,
+            description TEXT,
+            price INTEGER NOT NULL,
+            photo_file_id TEXT,
+            is_active INTEGER DEFAULT 1,
+            sort_order INTEGER DEFAULT 0,
+            FOREIGN KEY (collection_id) REFERENCES collections(id)
+        )P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)‚) ##„tablecollectionscollectionsCREATE TABLE collections (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            description TEXT,
+            photo_file_id TEXT,
+            is_active INTEGER DEFAULT 1,
+            sort_order INTEGER DEFAULT 0
+        )‚ ѓetableusersusersCREATE TABLE users (
+            user_id INTEGER PRIMARY KEY,
+            username TEXT,
+            first_name TEXT,
+            last_name TEXT,
+            phone TEXT,
+            address TEXT,
+            registered_at TEXT
+        )
+   
+* €Џ
+Ќ
+™¤*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              x
+
+ 7Ѓ3	ModernitГ© ImpГ©rialeS
+«AgACAgIAAxkBAAIXwmoSAdTybozQ-N4uj0E-3oiZmoaMAAIIImsbbaWRSH6vekVe2eysAQADAgADdwADOwQy	
+ ;	Ѓ3LвЂ™Art dвЂ™ГЉtre lightS
+«AgACAgIAAxkBAAIX1WoSAwtoo8d0rEmLk2MqzqvdiWm2AAKHGGsbAY6QSMRijwdRiyNeAQADAgADdwADOwQx
+ 9	Ѓ3LвЂ™Art dвЂ™ГЉtre darkS
+«AgACAgIAAxkBAAIX12oSAxdXEDFfMA7hSZjkFRqjGEVhAAKIGGsbAY6QSA1sQ5YrPqpAAQADAgADdwADOwQy 
+ ;	Ѓ3LвЂ™Art dвЂ™ГЉtre lightS
+«AgACAgIAAxkBAAIX1WoSAwtoo8d0rEmLk2MqzqvdiWm2AAKHGGsbAY6QSMRijwdRiyNeAQADAgADdwADOwQw
+ 3	Ѓ3
+Г‰lГ©gance 812 darkXXL
+«AgACAgIAAxkBAAIXz2oSAqTeaL-ZeW97bhNuWaYRz34HAAKDGGsbAY6QSOaAAYTjU7_KAQADAgADdwADOwQЃ
+ Q	Ѓ3Minuit Г  Saint-PГ©tersbourg lightS
+«AgACAgIAAxkBAAIX3WoSA0Qi4o4tr1BxflcWxiuUB83ZAAKLGGsbAY6QSAsIs3orHCTpAQADAgADdwADOwQy
+ 	;Ѓ3LвЂ™Art dвЂ™ГЉtre lightS
+«AgACAgIAAxkBAAIX1WoSAwtoo8d0rEmLk2MqzqvdiWm2AAKHGGsbAY6QSMRijwdRiyNeAQADAgADdwADOwQ}
+ 	CЃ3CathГ©drales de Brume lightS
+«AgACAgIAAxkBAAIX0WoSArlv_KgysewWXjuP1nmr8o1kAAKEGGsbAY6QSNAyNUmITdWuAQADAgADdwADOwQx
+ 	;	Ѓ3LвЂ™Art dвЂ™ГЉtre lightS
+«AgACAgIAAxkBAAIX1WoSAwtoo8d0rEmLk2MqzqvdiWm2AAKHGGsbAY6QSMRijwdRiyNeAQADAgADdwADOwQv
+ 	7	Ѓ3	ModernitГ© ImpГ©rialeS
+«AgACAgIAAxkBAAIXwmoSAdTybozQ-N4uj0E-3oiZmoaMAAIIImsbbaWRSH6vekVe2eysAQADAgADdwADOwQ
+    l е
+Ш›
+X
+ Б l                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    S/mindexidx_orders_statusordersCREATE INDEX idx_orders_status ON orders(status)S+qindexidx_orders_dateordersCREATE INDEX idx_orders_date ON orders(created_at)„
+ //‡;tablegroup_order_itemsgroup_order_itemsCREATE TABLE group_order_items (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            group_order_id INTEGER NOT NULL,
+            product_id INTEGER NOT NULL,
+            product_name TEXT,
+            quantity INTEGER DEFAULT 1,
+            size TEXT,
+            price INTEGER NOT NULL,
+            photo_file_id TEXT,
+            FOREIGN KEY (group_order_id) REFERENCES group_orders(id),
+            FOREIGN KEY (product_id) REFERENCES products(id)
+        )7K% indexsqlite_autoindex_group_orders_1group_orders
+„@ %%€Ctablegroup_ordersgroup_ordersCREATE TABLE group_orders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            order_number TEXT UNIQUE,
+            total_price INTEGER NOT NULL,
+            delivery_city TEXT,
+            delivery_address TEXT,
+            phone TEXT,
+            delivery_date TEXT,
+            delivery_time TEXT,
+            status TEXT DEFAULT 'pending',
+            created_at TEXT NOT NULL,
+            updated_at TEXT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚:
+ ))„/tableadmin_messagesadmin_messagesCREATE TABLE admin_messages (id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            message_text TEXT,
+            created_at TEXT,
+            is_read INTEGER DEFAULT 0,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚
+	 ##ѓ[tablelink_clickslink_clicks
+CREATE TABLE link_clicks (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            username TEXT,
+            click_date TEXT,
+            FOREIGN KEY (user_id) REFERENCES users(user_id)
+        )‚ ''ѓotablemenu_settingsmenu_settings	CREATE TABLE menu_settings (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            photo_file_id TEXT,
+            welcome_text TEXT,
+            channel_link TEXT,
+            chat_link TEXT,
+            support_links TEXT
+        )
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+I И ИИЧnnnnnnnnЃдH                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ‹W =•IЃ3	LвЂ™Г‚me de la Neva darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ С„РёСЂРјРµРЅРЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG, РІРґРѕС…РЅРѕРІР»РµРЅРЅРѕР№ Р°С‚РјРѕСЃС„РµСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ РґРѕРїРѕР»РЅРµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёЉ	
+ ?’+Ѓ3	LвЂ™Г‚me de la Neva lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG. РќР° РіСЂСѓРґРё СЂР°СЃРїРѕР»РЊ~	 7Ѓ3	ModernitГ© ImpГ©rialeР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG ModernitГ© ImpГ©riale
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ СЃРѕРІСЂРµРјРµРЅРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј, РІРґРѕС…РЅРѕРІР»РµРЅРЅС‹Рј Р°С‚РјРѕСЃС„РµСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ СѓРєСЂР°С€РµРЅР° Р»Р°РєРѕРЅРёС‡РЅС‹Рј С„РёСЂРјРµРЅРЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј OBEREG, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ РіСЂР°С„РёС‡РµСЃРєРёР№ РєРѕР»Р»Р°Р¶ СЃ Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РіРѕСЂРѕРґР°, СЃРёР»СѓСЌС‚РѕРј РґРµРІСѓС€РєРё Рё СѓСЂР±Р°РЅРёСЃС‚РёС‡РµСЃРєРёРјРё СЌР»РµРјРµРЅС‚Р°РјРё. РђРєС†РµРЅС‚РЅР°СЏ РЅР°РґРїРёСЃСЊ вЂњPETERSBURGвЂќ Рё СЃРѕС‡РµС‚Р°РЅРёРµ РјРѕРЅРѕС…СЂРѕРјРЅРѕР№ РіСЂР°С„РёРєРё СЃ СЏСЂРєРёРјРё РѕСЂР°РЅР¶РµРІС‹РјРё РґРµС‚Р°Р»СЏРјРё СЃРѕР·РґР°СЋС‚ РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Р№ streetwear-РѕР±СЂР°Р·.
+Р”РёР·Р°Р№РЅ РїРµСЂРµРґР°РµС‚ РЅР°СЃС‚СЂРѕРµРЅРёРµ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹ вЂ” СЃРѕС‡РµС‚Р°РЅРёРµ Р°СЂС…РёС‚РµРєС‚СѓСЂС‹, РёСЃРєСѓСЃСЃС‚РІР° Рё РіРѕСЂРѕРґСЃРєРѕР№ СЌСЃС‚РµС‚РёРєРё. Р¤СѓС‚Р±РѕР»РєР° РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕРіРѕ РіР°СЂРґРµСЂРѕР±Р° Рё Р»РµРіРєРѕ РєРѕРјР±РёРЅРёСЂСѓРµС‚СЃСЏ СЃ РґР¶РёРЅСЃР°РјРё, РєР°СЂРіРѕ Рё oversize-РѕР±СЂР°Р·Р°РјРё.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РђРІС‚РѕСЂСЃРєРёР№ РїСЂРёРЅС‚-РєРѕР»Р»Р°Р¶ РЅР° СЃРїРёРЅРµ
+вЂў Р“СЂР°С„РёРєР° РІ СЃС‚РёР»Рµ urban / streetwear
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIXwmoSAdTybozQ-N4uj0E-3oiZmoaMAAIIImsbbaWRSH6vekVe2eysAQADAgADdwADOwQ  · ;’-
+	Р’С‚РѕСЂРѕР№ С‚РѕРІР°СЂР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG. РќР° РіСЂСѓРґРё СЂР°СЃРїРѕР»РѕР¶РµРЅ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї, Р° РЅР° СЃРїРёРЅРµ вЂ” РєСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ СЃ СЂР°Р·РІРµРґРµРЅРЅС‹РјРё РјРѕСЃС‚Р°РјРё Рё Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. Р”РёР·Р°Р№РЅ РґРѕРїРѕР»РЅСЏСЋС‚ РЅР°РґРїРёСЃРё вЂњSAINT PETERSBURGвЂќ Рё вЂњCULTURAL CODEвЂќ, СЃРѕР·РґР°РІР°СЏ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РіРѕСЂРѕРґСЃРєРѕР№ РѕР±СЂР°Р· СЃ Р°С‚РјРѕСЃС„РµСЂРѕР№ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹. Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё Р°РєС†РµРЅС‚РЅРѕР№, РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… Рё РїРѕРІСЃРµРґРЅРµРІРЅС‹С… streetwear-РѕР±СЂР°Р·РѕРІ. РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё: вЂў Р¦РІРµС‚: Р±РµР»С‹Р№ вЂў РљСЂРѕР№: oversize вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚ вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ вЂў РђРІС‚РѕСЂСЃРєР°СЏ РіСЂР°С„РёРєР° OBEREG вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex  вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё streetwear-РѕР±СЂР°Р·РѕРІ
+«
+     
+ф 
+њ Љ 5’/Ѓ3	Г‰lГ©gance 812 lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Г‰lГ©gance 812В 
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅС‹Рј РїСЂРёРЅС‚РѕРј вЂњ812вЂќ РІ С„РёСЂРјРµРЅРЅРѕРј СЃС‚РёР»Рµ OBEREG. Р›Р°РєРѕРЅРёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё РґРѕРїРѕР»РЅСЏРµС‚СЃСЏ РІС‹СЂР°Р·РёС‚РµР»СЊРЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ, РІРґРѕС…РЅРѕРІР»РµРЅРЅРѕР№ Р°С‚РјРѕСЃС„РµСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР° Рё РіРѕСЂРѕРґСЃРєРѕР№ СЌСЃС‚РµС‚РёРєРѕР№. Р”РёР·Р°Р№РЅ СЃРѕС‡РµС‚Р°РµС‚ С‡РёСЃС‚С‹Р№ РјРёРЅРёРјР°Р»РёР·Рј Рё Р°РєС†РµРЅС‚РЅС‹Р№ streetwear-С…Р°СЂР°РєС‚РµСЂ.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё СЏСЂРєРѕР№, РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… РѕР±СЂР°Р·РѕРІ Рё РїРѕРІСЃРµРґРЅРµРІРЅС‹С… СЃРѕС‡РµС‚Р°РЅРёР№ РІ СЃС‚РёР»Рµ casual Рё urban.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў Р”РёР·Р°Р№РЅ вЂњ812вЂќ РІ С„РёСЂРјРµРЅРЅРѕР№ СЃС‚РёР»РёСЃС‚РёРєРµ
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё streetwear-РѕР±СЂР°Р·РѕРІ
+В 
+«AgACAgIAAxkBAAIXzWoSAp95Yk5N5IyAETqWeyYlOwlsAAKCGGsbAY6QSPwIbllqV8ddAQADAgADdwADOwQ‹W =•IЃ3	LвЂ™Г‚me de la Neva darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ С„РёСЂРјРµРЅРЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG, РІРґРѕС…РЅРѕРІР»РµРЅРЅРѕР№ Р°С‚РјРѕСЃС„РµСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ РґРѕРїРѕР»РЅРµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј Р±СЂРµРЅРґР°, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ Р°СЂС‚ СЃ СЂР°Р·РІРµРґРµРЅРЅС‹РјРё РјРѕСЃС‚Р°РјРё Рё СЃРёР»СѓСЌС‚РѕРј РџРµС‚СЂРѕРїР°РІР»РѕРІСЃРєРѕРіРѕ СЃРѕР±РѕСЂР° вЂ” РѕРґРЅРёРј РёР· РіР»Р°РІРЅС‹С… СЃРёРјРІРѕР»РѕРІ РіРѕСЂРѕРґР°. РќР°РґРїРёСЃРё вЂњSAINT PETERSBURGвЂќ Рё вЂњCULTURAL CODEвЂќ РїРѕРґС‡РµСЂРєРёРІР°СЋС‚ СЌСЃС‚РµС‚РёРєСѓ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ streetwear-СЃС‚РёР»СЊ.
+Р¤СѓС‚Р±РѕР»РєР° СЃРѕС‡РµС‚Р°РµС‚ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ РґРёР·Р°Р№РЅ, СЃРІРѕР±РѕРґРЅС‹Р№ РєСЂРѕР№ Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅСѓСЋ РіСЂР°С„РёРєСѓ, РґРµР»Р°СЏ РјРѕРґРµР»СЊ СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕР№ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅС‹С… РѕР±СЂР°Р·РѕРІ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РђРІС‚РѕСЂСЃРєРёР№ РїСЂРёРЅС‚ РЅР° СЃРїРёРЅРµ
+вЂў Р“СЂР°С„РёРєР° СЃ СЃРёРјРІРѕР»РёРєРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+В 
+«AgACAgIAAxkBAAIXy2oSAnmOliEjMx9k1eVj7BL3gTuXAAJ9GGsbAY6QSOtfxtfGvIIuAQADAgADdwADOwQЉ	
+ ?’+Ѓ3	LвЂ™Г‚me de la Neva lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Г‚me de la Neva
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG. РќР° РіСЂСѓРґРё СЂР°СЃРїРѕР»РѕР¶РµРЅ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї, Р° РЅР° СЃРїРёРЅРµ вЂ” РєСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ СЃ СЂР°Р·РІРµРґРµРЅРЅС‹РјРё РјРѕСЃС‚Р°РјРё Рё Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. Р”РёР·Р°Р№РЅ РґРѕРїРѕР»РЅСЏСЋС‚ РЅР°РґРїРёСЃРё вЂњSAINT PETERSBURGвЂќ Рё вЂњCULTURAL CODEвЂќ, СЃРѕР·РґР°РІР°СЏ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РіРѕСЂРѕРґСЃРєРѕР№ РѕР±СЂР°Р· СЃ Р°С‚РјРѕСЃС„РµСЂРѕР№ СЃРµРІРµСЂРЅРѕР№ СЃС‚РѕР»РёС†С‹.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё Р°РєС†РµРЅС‚РЅРѕР№, РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… Рё РїРѕРІСЃРµРґРЅРµРІРЅС‹С… streetwear-РѕР±СЂР°Р·РѕРІ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ РіСЂР°С„РёРєР° OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё streetwear-РѕР±СЂР°Р·РѕРІ
+«AgACAgIAAxkBAAIXyWoSAnBceflrlGhZRVr0dsRUhmJPAAJ8GGsbAY6QSPs7yY67SQfDAQADAgADdwADOwQ
+	@ # 
+y#	@                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Љ C’IЃ3	CathГ©drales de Brume lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG CathГ©drales de BrumeВ 
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅС‹Рј РіСЂР°С„РёС‡РµСЃРєРёРј РїСЂРёРЅС‚РѕРј OBEREG. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ РґРѕРїРѕР»РЅРµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј Р±СЂРµРЅРґР°, Р° РЅР° СЃРїРёРЅРµ СЂР°Р·РјРµС‰РµРЅ РєСЂСѓРїРЅС‹Р№ Р°СЂС‚ СЃ Р°СЂС…РёС‚РµРєС‚СѓСЂРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР° Рё РЅР°РґРїРёСЃСЊСЋ вЂњPETERSBURGвЂќ. Р§РµСЂРЅРѕ-Р±РµР»Р°СЏ РіСЂР°С„РёРєР° РїСЂРёРґР°РµС‚ РјРѕРґРµР»Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РіРѕСЂРѕРґСЃРєРѕР№ С…Р°СЂР°РєС‚РµСЂ Рё РґРµР»Р°РµС‚ С„СѓС‚Р±РѕР»РєСѓ СЏСЂРєРёРј СЌР»РµРјРµРЅС‚РѕРј РїРѕРІСЃРµРґРЅРµРІРЅРѕРіРѕ РіР°СЂРґРµСЂРѕР±Р°.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё Р°РєС†РµРЅС‚РЅРѕР№, РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… РѕР±СЂР°Р·РѕРІ Рё СЃРѕС‡РµС‚Р°РЅРёР№ РІ СЃС‚РёР»Рµ casual Рё streetwear.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ РіСЂР°С„РёРєР° OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX0WoSArlv_KgysewWXjuP1nmr8o1kAAKEGGsbAY6QSNAyNUmITdWuAQADAgADdwADOwQ  9 AKЃ3	CathГ©drales de Brume darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX02oSAsSkv1fLuVL8h3ueJLOJkLkzAAKFGGsbAY6QSNbAFKTEXfY8AQADAgADdwADOwQ   ќ CKЃ3	CathГ©drales de Brume lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX0WoSArlv_KgysewWXjuP1nmr8o1kAAKEGGsbAY6QSNAyNUmITdWuAQADAgADdwADOwQ‹
+ 3”-Ѓ3	Г‰lГ©gance 812 darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Г‰lГ©gance 812
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ С„РёСЂРјРµРЅРЅРѕР№ РіСЂР°С„РёРєРѕР№ OBEREG. РњРѕРґРµР»СЊ СЃРѕС‡РµС‚Р°РµС‚ РјРёРЅРёРјР°Р»РёР·Рј СЃРїРµСЂРµРґРё Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Р№ Р°РєС†РµРЅС‚ РЅР° СЃРїРёРЅРµ: РєСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ вЂњ812вЂќ РІС‹РїРѕР»РЅРµРЅ РІ РґРµРєРѕСЂР°С‚РёРІРЅРѕР№ С‚РµРєСЃС‚СѓСЂРµ, РІРґРѕС…РЅРѕРІР»РµРЅРЅРѕР№ СЌСЃС‚РµС‚РёРєРѕР№ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. Р”РѕРїРѕР»РЅСЏСЋС‚ РґРёР·Р°Р№РЅ РЅР°РґРїРёСЃРё вЂњSaint-PetersburgвЂќ Рё С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї Р±СЂРµРЅРґР°, СЃРѕР·РґР°РІР°СЏ Р°С‚РјРѕСЃС„РµСЂСѓ СЃРѕРІСЂРµРјРµРЅРЅРѕРіРѕ streetwear.
+РЎРІРѕР±РѕРґРЅС‹Р№ РєСЂРѕР№ Рё СѓРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃРёР»СѓСЌС‚ РґРµР»Р°СЋС‚ С„СѓС‚Р±РѕР»РєСѓ РєРѕРјС„РѕСЂС‚РЅРѕР№ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё Рё Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµРјРѕР№ СЃ Р»СЋР±С‹Рј РіР°СЂРґРµСЂРѕР±РѕРј вЂ” РѕС‚ РґРµРЅРёРјР° РґРѕ РєР°СЂРіРѕ Рё СЃРїРѕСЂС‚РёРІРЅРѕРіРѕ СЃС‚РёР»СЏ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РљСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ вЂњ812вЂќ РЅР° СЃРїРёРЅРµ
+вЂў Р¤РёСЂРјРµРЅРЅР°СЏ РіСЂР°С„РёРєР° OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIXz2oSAqTeaL-ZeW97bhNuWaYRz34HAAKDGGsbAY6QSOaAAYTjU7_KAQADAgADdwADOwQ
+   й 
+Rй­ pН5ћ
+rбLЇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Ѓ!
+ AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQЃ 
+ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQЃ
+ 3KЃ3	Bordeaux de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX9WoSA97aYljUIQ7bXFWPZZKfz2sNAAKeGGsbAY6QSCAuNe7R0TiRAQADAgADdwADOwQЃ
+ +KЃ3	Bleu de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX82oSA9c-iviT689tly6KGQeFOiknAAKbGGsbAY6QSOMtZcArmf_cAQADAgADdwADOwQЃ
+ 9KЃ3	MГ©lancolie ImpГ©rialeРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX8WoSA84I0WaFN9393cOGbHsjQEVFAAKaGGЉf ;“iЃ3	LвЂ™Art dвЂ™ГЉtre lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Art dвЂ™ГЉtret
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРЅС‚РѕРј OBEREG. Р›Р°РєРѕРЅРёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё РґРѕРїРѕР»РЅСЏРµС‚СЃСЏ РєСЂСѓРїРЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ: С†РІРµС‚РѕС‡РЅС‹Р№ Р°СЂС‚ РІ РєСЂР°СЃРЅС‹С… РѕС‚С‚РµРЅРєР°С… Рё С‚РёРїРѕРіСЂР°С„РёРєР° вЂњIMPERFECTION AUTHENTICITYвЂќ СЃРѕР·РґР°СЋС‚ СЏСЂРєРёР№ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РѕР±СЂР°Р·.
+РљРѕРЅС†РµРїС†РёСЏ РґРёР·Р°Р№РЅР° РІРґРѕС…РЅРѕРІР»РµРЅР° РёРґРµРµР№ СЃР°РјРѕРІС‹СЂР°Р¶РµРЅРёСЏ, РµСЃС‚РµСЃС‚РІРµРЅРЅРѕСЃС‚Рё Рё РїСЂРёРЅСЏС‚РёСЏ СЃРІРѕРµР№ СѓРЅРёРєР°Р»СЊРЅРѕСЃС‚Рё. Р‘РµР»Р°СЏ Р±Р°Р·Р° РґРµР»Р°РµС‚ РїСЂРёРЅС‚ Р±РѕР»РµРµ Р°РєС†РµРЅС‚РЅС‹Рј Рё РІРёР·СѓР°Р»СЊРЅРѕ Р»РµРіРєРёРј, РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґСЏС‰РёРј РґР»СЏ Р»РµС‚РЅРёС… Рё casual streetwear-РѕР±СЂР°Р·РѕРІ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ С†РІРµС‚РѕС‡РЅР°СЏ РіСЂР°С„РёРєР°
+вЂў РђРєС†РµРЅС‚РЅС‹Рµ РєСЂР°СЃРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹
+вЂў РЎРѕРІСЂРµРјРµРЅРЅС‹Р№ urban / streetwear СЃС‚РёР»СЊ
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX1WoSAwtoo8d0rEmLk2MqzqvdiWm2AAKHGGsbAY6QSMRijwdRiyNeAQADAgADdwADOwQ‹+ A”mЃ3	CathГ©drales de Brume darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG CathГ©drales de BrumeВ 
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ Р°РІС‚РѕСЂСЃРєРёРј РїСЂРёРЅС‚РѕРј Р±СЂРµРЅРґР° OBEREG. РњРѕРґРµР»СЊ РІС‹РїРѕР»РЅРµРЅР° РІ РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅРѕРј СЃС‚РёР»Рµ: СЃРїРµСЂРµРґРё СЂР°СЃРїРѕР»РѕР¶РµРЅ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї, Р° Р°РєС†РµРЅС‚РЅС‹Р№ РїСЂРёРЅС‚ РЅР° СЃРїРёРЅРµ РїРѕСЃРІСЏС‰РµРЅ Р°СЂС…РёС‚РµРєС‚СѓСЂРµ РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°. Р“СЂР°С„РёРєР° СЃРѕС‡РµС‚Р°РµС‚ Р°С‚РјРѕСЃС„РµСЂРЅРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РіРѕСЂРѕРґСЃРєРѕРіРѕ СЃРёР»СѓСЌС‚Р° Рё РєСЂСѓРїРЅСѓСЋ РЅР°РґРїРёСЃСЊ вЂњPETERSBURGвЂќ, СЃРѕР·РґР°РІР°СЏ СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ streetwear-РѕР±СЂР°Р· СЃ СЌСЃС‚РµС‚РёРєРѕР№ urban culture.
+Р¤СѓС‚Р±РѕР»РєР° РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅС‹С… РѕР±СЂР°Р·РѕРІ вЂ” Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РґР¶РёРЅСЃР°РјРё, РєР°СЂРіРѕ, С€РѕСЂС‚Р°РјРё Рё РѕРІРµСЂСЃР°Р№Р·-РІРµСЂС…РѕРј. РЎРІРѕР±РѕРґРЅС‹Р№ РєСЂРѕР№ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ РєРѕРјС„РѕСЂС‚РЅСѓСЋ РїРѕСЃР°РґРєСѓ Рё СЃРІРѕР±РѕРґСѓ РґРІРёР¶РµРЅРёР№.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РџСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў Р¤РёСЂРјРµРЅРЅР°СЏ РіСЂР°С„РёРєР° OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+«AgACAgIAAxkBAAIX02oSAsSkv1fLuVL8h3ueJLOJkLkzAAKFGGsbAY6QSNbAFKTEXfY8AQADAgADdwADOwQ
+? б б
+Ґ
+њщaК6
+ћ
+
+	xЫ??                                                                                                                                                                                                                                                                                                                                                                                                                                                               Њ[ 9—UЃ3	LвЂ™Art dвЂ™ГЉtre darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LвЂ™Art dвЂ™ГЉtret
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС†РµРїС‚СѓР°Р»СЊРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј РІ СЃС‚РёР»Рµ contemporarystreetwear. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ СѓРєСЂР°С€РµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј С„РёСЂРјРµРЅРЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј OBEREG, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ РіСЂР°С„РёС‡РµСЃРєРёР№ РґРёР·Р°Р№РЅ СЃ С†РІРµС‚РєРѕРј РІ РЅРµРѕРЅРѕРІРѕ-Р±РёСЂСЋР·РѕРІРѕРј РѕС‚С‚РµРЅРєРµ Рё С‚РёРїРѕРіСЂР°С„РёРєРѕР№вЂњIMPERFECTION AUTHENTICITYвЂќ.
+Р”РёР·Р°Р№РЅ РїРµСЂРµРґР°РµС‚ РёРґРµСЋ РїСЂРёРЅСЏС‚РёСЏ СЃРІРѕРµР№ РёРЅРґРёРІРёРґСѓР°Р»СЊРЅРѕСЃС‚Рё Рё РєСЂР°СЃРѕС‚С‹ РЅРµСЃРѕРІРµСЂС€РµРЅСЃС‚РІР°. РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ РіСЂР°С„РёРєР° Рё РіР»СѓР±РѕРєРёР№ С‡РµСЂРЅС‹Р№ С†РІРµС‚ СЃРѕР·РґР°СЋС‚ РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Р№ urban-РѕР±СЂР°Р· СЃ СЃРѕРІСЂРµРјРµРЅРЅС‹Рј С…Р°СЂР°РєС‚РµСЂРѕРј.
+Р¤СѓС‚Р±РѕР»РєР° РїРѕРґРѕР№РґРµС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅС‹С… Рё streetwear-Р»СѓРєРѕРІ, Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°СЏСЃСЊ СЃ РґРµРЅРёРјРѕРј, РєР°СЂРіРѕ Рё РѕР±СЉРµРјРЅС‹Рј РІРµСЂС…РѕРј.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РђРІС‚РѕСЂСЃРєРёР№ РїСЂРёРЅС‚ СЃ С†РІРµС‚РѕС‡РЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Рµ Р±РёСЂСЋР·РѕРІС‹Рµ СЌР»РµРјРµРЅС‚С‹
+вЂў РљРѕРЅС†РµРїС‚СѓР°Р»СЊРЅС‹Р№ streetwear-РґРёР·Р°Р№РЅ
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX12oSAxdXEDFfMA7hSZjkFRqjGEVhAAKIGGsbAY6QSA1sQ5YrPqpAAQADAgADdwADOwQ  f AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQЃ 
+ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQЃ
+ 3KЃ3	Bordeaux de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX9WoSA97aYljUIQ7bXFWPZZKfz2sNAAKeGGsbAY6QSCAuNe7R0TiRAQADAgADdwADOwQЃ
+ +KЃ3	Bleu de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX82oSA9c-iviT689tly6KGQeFOiknAAKbGGsbAY6QSOMtZcArmf_cAQADAgADdwADOwQЃ
+ 9ЉX =“KЃ3	La PoГ©sie du Nord lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG La PoГ©sie du Nord
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ С„РёСЂРјРµРЅРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј OBEREG. Р›Р°РєРѕРЅРёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё РґРѕРїРѕР»РЅСЏРµС‚СЃСЏ РєСЂСѓРїРЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ СЃ С†РІРµС‚РѕС‡РЅРѕР№ РёР»Р»СЋСЃС‚СЂР°С†РёРµР№ Рё РЅР°РґРїРёСЃСЊСЋ вЂњGrowThrough What You Go ThroughвЂќ. Р”РёР·Р°Р№РЅ РІРґРѕС…РЅРѕРІР»РµРЅ РёРґРµРµР№ Р»РёС‡РЅРѕСЃС‚РЅРѕРіРѕ СЂРѕСЃС‚Р°, СЃР°РјРѕРІС‹СЂР°Р¶РµРЅРёСЏ Рё РІРЅСѓС‚СЂРµРЅРЅРµР№ СЃРёР»С‹.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё СЃРІРµР¶РµР№, Р° РєРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ РґРµР»Р°РµС‚ РјРѕРґРµР»СЊ СЏСЂРєРёРј Р°РєС†РµРЅС‚РѕРј РІ РїРѕРІСЃРµРґРЅРµРІРЅРѕРј РіР°СЂРґРµСЂРѕР±Рµ. Р¤СѓС‚Р±РѕР»РєР° РёРґРµР°Р»СЊРЅРѕ РІРїРёСЃС‹РІР°РµС‚СЃСЏ РІ casual Рё streetwear-РѕР±СЂР°Р·С‹.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ С†РІРµС‚РѕС‡РЅР°СЏ РіСЂР°С„РёРєР°
+вЂў РњРѕС‚РёРІР°С†РёРѕРЅРЅС‹Р№ РґРёР·Р°Р№РЅ OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё urban-РѕР±СЂР°Р·РѕРІ
+«AgACAgIAAxkBAAIX2WoSAythr6Sj8iCl5AztlCtplfDmAAKJGGsbAY6QSM27_-QVLrCZAQADAgADdwADOwQ
+	f А А
+З
+€с]Е4
+џ
+	f	f                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Ќ# ;cЃ3	La PoГ©sie du Nord darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG La PoГ©sie du Nord
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ Р°С‚РјРѕСЃС„РµСЂРЅС‹Рј РіСЂР°С„РёС‡РµСЃРєРёРј РїСЂРёРЅС‚РѕРј OBEREG. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ СѓРєСЂР°С€РµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹РјС„РёСЂРјРµРЅРЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ Р°СЂС‚ СЃ С†РІРµС‚РѕС‡РЅРѕР№ РєРѕРјРїРѕР·РёС†РёРµР№, РґРµРєРѕСЂР°С‚РёРІРЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№ Рё РјРѕС‚РёРІР°С†РёРѕРЅРЅРѕР№ С„СЂР°Р·РѕР№ вЂњGrow ThroughWhat You Go ThroughвЂќ.
+Р”РёР·Р°Р№РЅ СЃРѕС‡РµС‚Р°РµС‚ СЌСЃС‚РµС‚РёРєСѓ РІРёРЅС‚Р°Р¶РЅРѕРіРѕ streetwear Рё СЃРѕРІСЂРµРјРµРЅРЅРѕРіРѕ urban-СЃС‚РёР»СЏ, РїРµСЂРµРґР°РІР°СЏ РёРґРµСЋ РІРЅСѓС‚СЂРµРЅРЅРµРіРѕ СЂРѕСЃС‚Р°, СЃРёР»С‹ Рё РґРІРёР¶РµРЅРёСЏ РІРїРµСЂРµРґ. РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ Р±РµР»Р°СЏ РіСЂР°С„РёРєР° СЌС„С„РµРєС‚РЅРѕ РІС‹РґРµР»СЏРµС‚СЃСЏ РЅР° С‡РµСЂРЅРѕР№ С‚РєР°РЅРё, РґРµР»Р°СЏ С„СѓС‚Р±РѕР»РєСѓ Р°РєС†РµРЅС‚РЅРѕР№ С‡Р°СЃС‚СЊСЋ РѕР±СЂР°Р·Р°.
+РњРѕРґРµР»СЊ РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё Рё Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РґР¶РёРЅСЃР°РјРё, РєР°СЂРіРѕ Рё oversize-РІРµСЂС…РѕРј.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РљСЂСѓРїРЅС‹Р№ РїСЂРёРЅС‚ СЃ С†РІРµС‚РѕС‡РЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ
+вЂў РњРѕС‚РёРІР°С†РёРѕРЅРЅС‹Р№ РґРёР·Р°Р№РЅ РІ СЃС‚РёР»Рµ streetwear
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ Р±РµР»Р°СЏ РіСЂР°С„РёРєР°
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX22oSAznW1PZOYrpbuHvKGKv3IVGbAAKKGGsbAY6QSErGm6nwsFopAQADAgADdwADOwQ  a AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQЃ 
+ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQЃ
+ 3KЃ3	Bordeaux de la NevaРѕРїРёСЉ6 Q’sЃ3	Minuit Г  Saint-PГ©tersbourg lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Minuit Г  Saint-PГ©tersbourg
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРЅС‚РѕРј OBEREG. Р›Р°РєРѕРЅРёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РєСЂСѓРїРЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ: С†РІРµС‚РѕРє Р»РёР»РёРё, РґРµРєРѕСЂР°С‚РёРІРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ Рё РІРґРѕС…РЅРѕРІР»СЏСЋС‰РёРµ РЅР°РґРїРёСЃРё СЃРѕР·РґР°СЋС‚ СѓС‚РѕРЅС‡РµРЅРЅС‹Р№ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ РѕР±СЂР°Р·.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё РІРѕР·РґСѓС€РЅРѕР№, Р° РєРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ РґРµР»Р°РµС‚ РґРёР·Р°Р№РЅ Р°РєС†РµРЅС‚РЅС‹Рј Рё СЃС‚РёР»СЊРЅС‹Рј. РњРѕРґРµР»СЊ РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ Р»РµС‚РЅРёС… casual Рё streetwear-РѕР±СЂР°Р·РѕРІ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ С†РІРµС‚РѕС‡РЅР°СЏ РіСЂР°С„РёРєР°
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ streetwear-РґРёР·Р°Р№РЅ
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕРіРѕ РіР°СЂРґРµСЂРѕР±Р°
+«AgACAgIAAxkBAAIX3WoSA0Qi4o4tr1BxflcWxiuUB83ZAAKLGGsbAY6QSAsIs3orHCTpAQADAgADdwADOwQ
+Ю  7 [ 7Х=
+¬
+zЮЮ                             Љ! 9’aЃ3	LumiГЁre de Neva lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LumiГЁre de Neva
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРЅС‚РѕРј OBEREG. Р›Р°РєРѕРЅРёС‡РЅС‹Р№ С„РёСЂРјРµРЅРЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё РґРѕРїРѕР»РЅСЏРµС‚СЃСЏ РєСЂСѓРїРЅРѕР№ С†РІРµС‚РѕС‡РЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ Рё РЅР°РґРїРёСЃСЊСЋ вЂњGrow WhereYouвЂ™re PlantedвЂќ, РѕС‚СЂР°Р¶Р°СЋС‰РµР№ РёРґРµСЋ Р»РёС‡РЅРѕСЃС‚РЅРѕРіРѕ СЂРѕСЃС‚Р° Рё СЃР°РјРѕРІС‹СЂР°Р¶РµРЅРёСЏ.
+Р‘РµР»Р°СЏ РІРµСЂСЃРёСЏ РІС‹РіР»СЏРґРёС‚ Р±РѕР»РµРµ Р»РµРіРєРѕР№ Рё СЃРІРµР¶РµР№, Р° РєРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ РґРµР»Р°РµС‚ РјРѕРґРµР»СЊ СЃС‚РёР»СЊРЅС‹Рј Р°РєС†РµРЅС‚РѕРј РІ РїРѕРІСЃРµРґРЅРµРІРЅРѕРј РѕР±СЂР°Р·Рµ. Р¤СѓС‚Р±РѕР»РєР° РѕС‚Р»РёС‡РЅРѕ РІРїРёСЃС‹РІР°РµС‚СЃСЏ РІ casual Рё streetwear-РіР°СЂРґРµСЂРѕР±.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РђРІС‚РѕСЂСЃРєР°СЏ С†РІРµС‚РѕС‡РЅР°СЏ РіСЂР°С„РёРєР°
+вЂў РњРѕС‚РёРІР°С†РёРѕРЅРЅС‹Р№ streetwear-РґРёР·Р°Р№РЅ
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё urban-РѕР±СЂР°Р·РѕРІ
+«AgACAgIAAxkBAAIX4WoSA1jnO7ltw-h2HUoQidXZTawIAAKUGGsbAY6QSOn1KTm8DV1IAQADAgADdwADOwQЌ  O	Ѓ3	Minuit Г  Saint-PГ©tersbourg darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Minuit Г  Saint-PГ©tersbourg
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј OBEREG. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ РґРѕРїРѕР»РЅРµРЅР° Р»Р°РєРѕРЅРёС‡РЅС‹Рј С„РёСЂРјРµРЅРЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РёР·СЏС‰РЅС‹Р№ РіСЂР°С„РёС‡РµСЃРєРёР№ РґРёР·Р°Р№РЅ СЃ С†РІРµС‚РєРѕРј Р»РёР»РёРё, РґРµРєРѕСЂР°С‚РёРІРЅРѕР№ Р°СЂРєРѕР№ Рё РЅР°РґРїРёСЃСЏРјРё вЂњStay TrueвЂќ Рё вЂњRester fidГЁle Г  soi-mГЄmeвЂќ.
+РљРѕРЅС†РµРїС†РёСЏ РґРёР·Р°Р№РЅР° РѕС‚СЂР°Р¶Р°РµС‚ РёРґРµСЋ РІРµСЂРЅРѕСЃС‚Рё СЃРµР±Рµ, РІРЅСѓС‚СЂРµРЅРЅРµР№ СЃРёР»С‹ Рё РµСЃС‚РµСЃС‚РІРµРЅРЅРѕР№ РєСЂР°СЃРѕС‚С‹. РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ Р±РµР»Р°СЏ РіСЂР°С„РёРєР° РЅР° С‡РµСЂРЅРѕР№ С‚РєР°РЅРё СЃРѕР·РґР°РµС‚ СЃС‚РёР»СЊРЅС‹Р№ Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Р№ streetwear-РѕР±СЂР°Р· СЃ СЌР»РµРјРµРЅС‚Р°РјРё СЌСЃС‚РµС‚РёРєРё minimal art.
+Р¤СѓС‚Р±РѕР»РєР° РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё Рё Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РґР¶РёРЅСЃР°РјРё, РєР°СЂРіРѕ Рё oversize-РѕР±СЂР°Р·Р°РјРё.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РђСЂС‚-РїСЂРёРЅС‚ СЃ С†РІРµС‚РѕС‡РЅРѕР№ РіСЂР°С„РёРєРѕР№ РЅР° СЃРїРёРЅРµ
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РґРёР·Р°Р№РЅ РІ СЃС‚РёР»Рµ minimal / streetwear
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё urban-РѕР±СЂР°Р·РѕРІ
+«AgACAgIAAxkBAAIX32oSA0x8Rl32sZbNYHqf_aFav_SIAAKQGGsbAY6QSOR6vuRlD3mXAQADAgADdwADOwQ  " AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQЃ 
+ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQЃ
+ 3KЃ3	Bordeaux de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX9WoSA97aYljUIQ7bXFWPZZKfz2sNAAKeGGsbAY6QSCAuNe7R0TiRAQADAgADdwADOwQЃ
+ +KЃ3	Bleu de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX82oSA9c-iviT689tly6KGQeFOiknAAKbGGsbAY6QSOMtZcArmf_cAQADAgADdwADOwQЃ
+ 9KЃ3	MГ©lancolie ImpГ©rialeРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX8WoSA84I0WaFN9393cOGbHsjQEVFAAKaGGsbAY6QSLQiwtsFWO2_AQADAgADdwADOwQЃ
+ 1KЃ3	Messager de MinuitРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX7moSA8eQJfjIkUEM-fPa_A4ncO6lAAKZGGsbAY6QSGdXAUESLvFLAQADAgADdwADOwQ   — 7KЃ3	LumiГЁre de Neva darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX42oSA2CTvscz-M6-HpU2J1DlOx7cAAKVGGsbAY6QSK-ZMfyi_J_2AQADAgADdwADOwQ
+   Я 	џЯ в M°                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Ќ= 1™!Ѓ3	Messager de MinuitР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G вЂ” Messager de Minuit В 
+Р‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G СЃ РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹РјР»РѕРіРѕС‚РёРїРѕРј РЅР° РіСЂСѓРґРё Рё СѓС‚РѕРЅС‡С‘РЅРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј РЅР° СЃРїРёРЅРµ. Р”РёР·Р°Р№РЅ РІС‹РїРѕР»РЅРµРЅ РІ РЅРµР¶РЅРѕ-СЂРѕР·РѕРІС‹С… РѕС‚С‚РµРЅРєР°С… Рё РІРґРѕС…РЅРѕРІР»С‘РЅ РѕР±СЂР°Р·Р°РјРё Р°РЅРіРµР»РѕРІ, СЃРёРјРІРѕР»РёР·РёСЂСѓСЋС‰РёС… Р·Р°С‰РёС‚Сѓ, С‡РёСЃС‚РѕС‚Сѓ Рё РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРІРµС‚. Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РєРѕРјРїРѕР·РёС†РёРё вЂ” Р°РЅРіРµР» СЃ Р»СѓРєРѕРј, РґРѕРїРѕР»РЅРµРЅРЅС‹Р№ СЂРѕРјР°РЅС‚РёС‡РЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№ Рё Р°С‚РјРѕСЃС„РµСЂРЅС‹РјРё РЅР°РґРїРёСЃСЏРјРё.
+РЎРІРµС‚Р»Р°СЏ РїР°Р»РёС‚СЂР° Рё РІРѕР·РґСѓС€РЅР°СЏ РіСЂР°С„РёРєР° СЃРѕР·РґР°СЋС‚ Р»С‘РіРєРѕРµ, СЌСЃС‚РµС‚РёС‡РЅРѕРµ РЅР°СЃС‚СЂРѕРµРЅРёРµ, СЃРѕС‡РµС‚Р°СЏ РІ СЃРµР±Рµ streetwear, vintage Рё angelcore СЌСЃС‚РµС‚РёРєСѓ. Р¤СѓС‚Р±РѕР»РєР° СЃС‚Р°РЅРµС‚ СЃС‚РёР»СЊРЅС‹Рј Р°РєС†РµРЅС‚РѕРј РІ РїРѕРІСЃРµРґРЅРµРІРЅРѕРј РѕР±СЂР°Р·Рµ Рё РїРѕРґРѕР№РґС‘С‚ С‚РµРј, РєС‚Рѕ Р»СЋР±РёС‚ РѕРґРµР¶РґСѓ СЃ СЃРёРјРІРѕР»РёР·РјРѕРј Рё С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅРѕР№ РїРѕРґР°С‡РµР№.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р‘Р°Р·РѕРІС‹Р№ Р±РµР»С‹Р№ С†РІРµС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї OBERР•G РЅР° РіСЂСѓРґРё
+вЂў РќРµР¶РЅС‹Р№ СЂРѕР·РѕРІС‹Р№ РїСЂРёРЅС‚ СЃ Р°РЅРіРµР»РѕРј РЅР° СЃРїРёРЅРµ
+вЂў РђС‚РјРѕСЃС„РµСЂРЅС‹Рµ РЅР°РґРїРёСЃРё Рё Р°РІС‚РѕСЂСЃРєР°СЏ РіСЂР°С„РёРєР°
+вЂў РљРѕРјС„РѕСЂС‚РЅС‹Р№ РјР°С‚РµСЂРёР°Р» РґР»СЏ РµР¶РµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ unisex С„Р°СЃРѕРЅ
+вЂў Р­СЃС‚РµС‚РёРєР° angelcore, streetwear Рё romantic vintage style
+«AgACAgIAAxkBAAIX7moSA8eQJfjIkUEM-fPa_A4ncO6lAAKZGGsbAY6QSGdXAUESLvFLAQADAgADdwADOwQЊ^ 7—]Ѓ3	LumiГЁre de Neva darkР§РµСЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG LumiГЁre de Neva dark
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ С‡РµСЂРЅРѕРј С†РІРµС‚Рµ СЃ С„РёСЂРјРµРЅРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј OBEREG. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ РґРѕРїРѕР»РЅРµРЅР° Р»Р°РєРѕРЅРёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј Р±СЂРµРЅРґР°, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ С†РІРµС‚РѕС‡РЅС‹Р№ РґРёР·Р°Р№РЅ СЃ РґРµРєРѕСЂР°С‚РёРІРЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№ Рё РІРґРѕС…РЅРѕРІР»СЏСЋС‰РµР№ С„СЂР°Р·РѕР№ вЂњGrow Where YouвЂ™re PlantedвЂќ.
+РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ Р±РµР»Р°СЏ РіСЂР°С„РёРєР° РЅР° С‡РµСЂРЅРѕР№ С‚РєР°РЅРё СЃРѕР·РґР°РµС‚ РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Р№ streetwear-РѕР±СЂР°Р·, СЃРѕС‡РµС‚Р°СЋС‰РёР№ СЌСЃС‚РµС‚РёРєСѓ РјРёРЅРёРјР°Р»РёР·РјР° Рё СЃРѕРІСЂРµРјРµРЅРЅРѕРіРѕ urban-СЃС‚РёР»СЏ. РљРѕРЅС†РµРїС†РёСЏ РґРёР·Р°Р№РЅР° СЃРёРјРІРѕР»РёР·РёСЂСѓРµС‚ РІРЅСѓС‚СЂРµРЅРЅРёР№ СЂРѕСЃС‚, РіР°СЂРјРѕРЅРёСЋ Рё СЂР°Р·РІРёС‚РёРµ РІ СЃРІРѕРµРј СЂРёС‚РјРµ.
+Р¤СѓС‚Р±РѕР»РєР° РёРґРµР°Р»СЊРЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕРіРѕ РіР°СЂРґРµСЂРѕР±Р° Рё Р»РµРіРєРѕ РєРѕРјР±РёРЅРёСЂСѓРµС‚СЃСЏ СЃ РґР¶РёРЅСЃР°РјРё, РєР°СЂРіРѕ Рё oversize-РѕР±СЂР°Р·Р°РјРё.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: С‡РµСЂРЅС‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РљСЂСѓРїРЅС‹Р№ С†РІРµС‚РѕС‡РЅС‹Р№ РїСЂРёРЅС‚ РЅР° СЃРїРёРЅРµ
+вЂў РњРѕС‚РёРІР°С†РёРѕРЅРЅС‹Р№ РґРёР·Р°Р№РЅ OBEREG
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅР°СЏ РіСЂР°С„РёРєР° РІ СЃС‚РёР»Рµ streetwear
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX42oSA2CTvscz-M6-HpU2J1DlOx7cAAKVGGsbAY6QSK-ZMfyi_J_2AQADAgADdwADOwQ
+
+	  @ у @
+Ґ
+	
+	                                              ‹0 +•
+Ѓ3	Bleu de la NevaР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Bleu de la Neva В 
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РєРѕРЅС‚СЂР°СЃС‚РЅС‹Рј СЃРёРЅРёРј РїСЂРёРЅС‚РѕРј РІ С„РёСЂРјРµРЅРЅРѕР№ СЌСЃС‚РµС‚РёРєРµ OBEREG. РќР° РіСЂСѓРґРё СЂР°СЃРїРѕР»РѕР¶РµРЅ Р»Р°РєРѕРЅРёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї Р±СЂРµРЅРґР°, Р° РЅР° СЃРїРёРЅРµ вЂ” РєСЂСѓРїРЅР°СЏ РіСЂР°С„РёРєР° СЃ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј Р°РЅРіРµР»Р°, РґРµРєРѕСЂР°С‚РёРІРЅРѕР№ С‚РёРїРѕРіСЂР°С„РёРєРѕР№вЂњGod The CreatorвЂќ Рё С‚РµРєСЃС‚РѕРј РёР· Genesis 1:1.
+Р“Р»СѓР±РѕРєРёР№ СЃРёРЅРёР№ С†РІРµС‚ РґРµР»Р°РµС‚ РґРёР·Р°Р№РЅ Р±РѕР»РµРµ РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Рј Рё РєРѕРЅС‚СЂР°СЃС‚РЅС‹Рј, СЃРѕС…СЂР°РЅСЏСЏ Р±Р°Р»Р°РЅСЃ РјРµР¶РґСѓ РІРёРЅС‚Р°Р¶РЅРѕР№ СЌСЃС‚РµС‚РёРєРѕР№ Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Рј streetwear-СЃС‚РёР»РµРј. РњРѕРґРµР»СЊ РѕС‚Р»РёС‡РЅРѕ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅС‹С… РѕР±СЂР°Р·РѕРІ Рё Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РґРµРЅРёРјРѕРј, РєР°СЂРіРѕ Рё oversize-РіР°СЂРґРµСЂРѕР±РѕРј.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРїРµСЂРµРґРё Рё РЅР° СЃРїРёРЅРµ
+вЂў РЎРёРЅСЏСЏ РіСЂР°С„РёРєР° РІ РІРёРЅС‚Р°Р¶РЅРѕРј СЃС‚РёР»Рµ
+вЂў РђРІС‚РѕСЂСЃРєРёР№ РґРёР·Р°Р№РЅ OBEREG
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ unisex
+вЂў РџРѕРґС…РѕРґРёС‚ РґР»СЏ casual Рё urban-РѕР±СЂР°Р·РѕРІ
+«AgACAgIAAxkBAAIX82oSA9c-iviT689tly6KGQeFOiknAAKbGGsbAY6QSOMtZcArmf_cAQADAgADdwADOwQЋ 9љEЃ3	MГ©lancolie ImpГ©rialeР§С‘СЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G вЂ” MГ©lancolie ImpГ©riale
+РЎС‚РёР»СЊРЅР°СЏ С‡С‘СЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G СЃ РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј РЅР° РіСЂСѓРґРё Рё СЏСЂРєРёРј С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРЅС‚РѕРј РЅР° СЃРїРёРЅРµ. Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РґРёР·Р°Р№РЅР° вЂ” Р°РЅРіРµР» РІ РЅРµР¶РЅС‹С… СЃРёСЂРµРЅРµРІРѕ-СЂРѕР·РѕРІС‹С… РѕС‚С‚РµРЅРєР°С…, РґРѕРїРѕР»РЅРµРЅРЅС‹Р№ РґРёРЅР°РјРёС‡РЅРѕР№ РЅР°РґРїРёСЃСЊСЋ вЂњDreamвЂќ Рё РІРґРѕС…РЅРѕРІР»СЏСЋС‰РёРј РїРѕСЃР»Р°РЅРёРµРј Рѕ РІРµСЂРµ РІ СЃРІРѕРё РјРµС‡С‚С‹ Рё СѓСЃРїРµС….
+РљРѕРЅС‚СЂР°СЃС‚РЅС‹Р№ РїСЂРёРЅС‚ СЃРѕР·РґР°С‘С‚ СЌС„С„РµРєС‚РЅС‹Р№ РІРёР·СѓР°Р»СЊРЅС‹Р№ Р°РєС†РµРЅС‚, СЃРѕС‡РµС‚Р°СЏ СЌСЃС‚РµС‚РёРєСѓ modern streetwear, СЂРѕРјР°РЅС‚РёС‡РµСЃРєРёРµ РјРѕС‚РёРІС‹ Рё Р°С‚РјРѕСЃС„РµСЂСѓ luxuryunderground fashion. РЎРІРѕР±РѕРґРЅС‹Р№ Р±Р°Р·РѕРІС‹Р№ СЃРёР»СѓСЌС‚ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ РєРѕРјС„РѕСЂС‚РЅСѓСЋ РїРѕСЃР°РґРєСѓ Рё СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕСЃС‚СЊ РІ РїРѕРІСЃРµРґРЅРµРІРЅС‹С… РѕР±СЂР°Р·Р°С….
+Р¤СѓС‚Р±РѕР»РєР° РїРѕРґРѕР№РґС‘С‚ С‚РµРј, РєС‚Рѕ Р»СЋР±РёС‚ РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Рµ РґРµС‚Р°Р»Рё, Р°СЂС‚-РіСЂР°С„РёРєСѓ Рё РѕРґРµР¶РґСѓ СЃ РёРґРµРµР№ Рё РЅР°СЃС‚СЂРѕРµРЅРёРµРј.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р‘Р°Р·РѕРІС‹Р№ С‡С‘СЂРЅС‹Р№ С†РІРµС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї OBERР•G РЅР° РіСЂСѓРґРё
+вЂў РђРІС‚РѕСЂСЃРєРёР№ РїСЂРёРЅС‚ СЃ Р°РЅРіРµР»РѕРј Рё РЅР°РґРїРёСЃСЊСЋ вЂњDreamвЂќ
+вЂў РЎРёСЂРµРЅРµРІРѕ-СЂРѕР·РѕРІР°СЏ РіСЂР°С„РёРєР° СЃ СЌС„С„РµРєС‚РѕРј СЃРІРµС‡РµРЅРёСЏ
+вЂў РљРѕРјС„РѕСЂС‚РЅС‹Р№ РјР°С‚РµСЂРёР°Р» РґР»СЏ РµР¶РµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ unisex С„Р°СЃРѕРЅ
+вЂў РЎРѕС‡РµС‚Р°РЅРёРµ streetwear, art Рё modern gothic СЌСЃС‚РµС‚РёРєРё
+«AgACAgIAAxkBAAIX8WoSA84I0WaFN9393cOGbHsjQEVFAAKaGGsbAY6QSLQiwtsFWO2_AQADAgADdwADOwQ  ч AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQЃ 
+ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQ  ѕ 3KЃ3	Bordeaux de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX9WoSA97aYljUIQ7bXFWPZZKfz2sNAAKeGGsbAY6QSCAuNe7R0TiRAQADAgADdwADOwQ  ) +KЃ3	Bleu de la NevaРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX82oSA9c-iviT689tly6KGQeFOiknAAKbGGsbAY6QSOMtZcArmf_cAQADAgADdwADOwQ    9KЃ3	MГ©lancolie ImpГ©rialeРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX8WoSA84I0WaFN9393cOGbHsjQEVFAAKaGGsbAY6QSLQiwtsFWO2_AQADAgADdwADOwQ
+О с 
+ сО                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ‹Z  C•IЃ3	Les Veilleurs du Nord lightР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G Les Veilleurs du Nord
+Р‘РµР»Р°СЏ Р±Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G СЃ Р»Р°РєРѕРЅРёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј СЃРїРµСЂРµРґРё Рё С…СѓРґРѕР¶РµСЃС‚РІРµРЅРЅС‹Рј РїСЂРёРЅС‚РѕРј РЅР° СЃРїРёРЅРµ. РР»Р»СЋСЃС‚СЂР°С†РёСЏ СЃ Р°РЅРіРµР»Р°РјРё, РѕРєСЂСѓР¶Р°СЋС‰РёРјРё СЃРµСЂРґС†Рµ, СЃРёРјРІРѕР»РёР·РёСЂСѓРµС‚ Р·Р°С‰РёС‚Сѓ, РёСЃРєСЂРµРЅРЅРѕСЃС‚СЊ Рё РІРЅСѓС‚СЂРµРЅРЅРёР№ СЃРІРµС‚. Р§С‘СЂРЅРѕ-РєСЂР°СЃРЅР°СЏ РіСЂР°С„РёРєР° РЅР° Р±РµР»РѕРј С„РѕРЅРµ РІС‹РіР»СЏРґРёС‚ РєРѕРЅС‚СЂР°СЃС‚РЅРѕ Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅРѕ, РїРѕРґС‡С‘СЂРєРёРІР°СЏ СЌСЃС‚РµС‚РёРєСѓ Р±СЂРµРЅРґР° Рё РґРµР»Р°СЏ С„СѓС‚Р±РѕР»РєСѓ СЏСЂРєРёРј Р°РєС†РµРЅС‚РѕРј РѕР±СЂР°Р·Р°.
+РЎРІРѕР±РѕРґРЅС‹Р№ СЃРёР»СѓСЌС‚ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ РєРѕРјС„РѕСЂС‚РЅСѓСЋ РїРѕСЃР°РґРєСѓ Рё СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕСЃС‚СЊ РІ СЃРѕС‡РµС‚Р°РЅРёСЏС…. РРґРµР°Р»СЊРЅРѕ РїРѕРґРѕР№РґС‘С‚ РґР»СЏ РїРѕРІСЃРµРґРЅРµРІРЅРѕРіРѕ РіР°СЂРґРµСЂРѕР±Р° Рё РїРѕРєР»РѕРЅРЅРёРєРѕРІ СЃС‚РёР»СЊРЅРѕР№ РєРѕРЅС†РµРїС‚СѓР°Р»СЊРЅРѕР№ РѕРґРµР¶РґС‹.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р‘Р°Р·РѕРІС‹Р№ Р±РµР»С‹Р№ С†РІРµС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї РЅР° РіСЂСѓРґРё
+вЂў Р”РµС‚Р°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Р№ РїСЂРёРЅС‚ СЃ Р°РЅРіРµР»Р°РјРё Рё СЃРµСЂРґС†РµРј
+вЂў РљРѕРјС„РѕСЂС‚РЅС‹Р№ РјР°С‚РµСЂРёР°Р» РґР»СЏ РµР¶РµРґРЅРµРІРЅРѕР№ РЅРѕСЃРєРё
+вЂў Unisex РјРѕРґРµР»СЊ
+вЂў РђС‚РјРѕСЃС„РµСЂР° art streetwear Рё modern gothic style
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQ  9 AKЃ3	Les Veilleurs du Nord darkРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQ   ќ CKЃ3	Les Veilleurs du Nord lightРѕРїРёСЃР°РЅРёРµ РІС‚РѕСЂРѕРіРѕ
+«AgACAgIAAxkBAAIX92oSA_QdPDyPtJj6Bgn9mH6t3wLeAAKfGGsbAY6QSJX0CFsJyXPIAQADAgADdwADOwQ‹v 3–Ѓ3	Bordeaux de la NevaР‘РµР»Р°СЏ С„СѓС‚Р±РѕР»РєР° OBEREG Bordeaux de la Neva В 
+Р‘Р°Р·РѕРІР°СЏ С„СѓС‚Р±РѕР»РєР° OVERSIZE РІ Р±РµР»РѕРј С†РІРµС‚Рµ СЃ РІРёРЅС‚Р°Р¶РЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј OBEREG. РЎРїРµСЂРµРґРё РјРѕРґРµР»СЊ СѓРєСЂР°С€РµРЅР° РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј С„РёСЂРјРµРЅРЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј, Р° РЅР° СЃРїРёРЅРµ СЂР°СЃРїРѕР»РѕР¶РµРЅ РєСЂСѓРїРЅС‹Р№ РіСЂР°С„РёС‡РµСЃРєРёР№ РґРёР·Р°Р№РЅ СЃ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј Р°РЅРіРµР»Р° Рё С‚РёРїРѕРіСЂР°С„РёРєРѕР№ вЂњGod TheCreatorвЂќ. РџСЂРёРЅС‚ РґРѕРїРѕР»РЅРµРЅ СЃС‚СЂРѕРєР°РјРё РёР· Genesis 1:1, СЃРѕР·РґР°РІР°СЏ Р°С‚РјРѕСЃС„РµСЂСѓ СЌСЃС‚РµС‚РёРєРё vintage streetwear СЃ СЌР»РµРјРµРЅС‚Р°РјРё РґСѓС…РѕРІРЅРѕР№ СЃРёРјРІРѕР»РёРєРё.
+Р‘РѕСЂРґРѕРІС‹Р№ РѕС‚С‚РµРЅРѕРє РіСЂР°С„РёРєРё РїСЂРёРґР°РµС‚ РјРѕРґРµР»Рё С‚РµРїР»С‹Р№ Р°РєС†РµРЅС‚ Рё РїРѕРґС‡РµСЂРєРёРІР°РµС‚ РІРёРЅС‚Р°Р¶РЅС‹Р№ С…Р°СЂР°РєС‚РµСЂ РґРёР·Р°Р№РЅР°. Р¤СѓС‚Р±РѕР»РєР° СЃРѕС‡РµС‚Р°РµС‚ РІ СЃРµР±Рµ РјРёРЅРёРјР°Р»РёР·Рј, РіР»СѓР±РѕРєРёР№ СЃРјС‹СЃР» Рё СЃРѕРІСЂРµРјРµРЅРЅС‹Р№ urban-СЃС‚РёР»СЊ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р¦РІРµС‚: Р±РµР»С‹Р№
+вЂў РљСЂРѕР№: oversize
+вЂў РљСЂСѓРіР»С‹Р№ РІРѕСЂРѕС‚
+вЂў РњРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Р№ Р»РѕРіРѕС‚РёРї СЃРїРµСЂРµРґРё
+вЂў РљСЂСѓРїРЅС‹Р№ РІРёРЅС‚Р°Р¶РЅС‹Р№ РїСЂРёРЅС‚ РЅР° СЃРїРёРЅРµ
+вЂў Р‘РѕСЂРґРѕРІР°СЏ РіСЂР°С„РёРєР° СЃ Р°РЅРіРµР»РѕРј Рё С‚РёРїРѕРіСЂР°С„РёРєРѕР№
+вЂў Streetwear-РґРёР·Р°Р№РЅ СЃ СЌСЃС‚РµС‚РёРєРѕР№ retro
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅР°СЏ РјРѕРґРµР»СЊ unisex
+«AgACAgIAAxkBAAIX9WoSA97aYljUIQ7bXFWPZZKfz2sNAAKeGGsbAY6QSCAuNe7R0TiRAQADAgADdwADOwQ
+   	± 	±                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ЊL! A—/Ѓ3	Les Veilleurs du Nord darkР§С‘СЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G Les Veilleurs du Nord
+Р‘Р°Р·РѕРІР°СЏ С‡С‘СЂРЅР°СЏ С„СѓС‚Р±РѕР»РєР° OBERР•G СЃ РјРёРЅРёРјР°Р»РёСЃС‚РёС‡РЅС‹Рј Р»РѕРіРѕС‚РёРїРѕРј РЅР° РіСЂСѓРґРё Рё РІС‹СЂР°Р·РёС‚РµР»СЊРЅС‹Рј Р°СЂС‚-РїСЂРёРЅС‚РѕРј РЅР° СЃРїРёРЅРµ. Р¦РµРЅС‚СЂР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РґРёР·Р°Р№РЅР° вЂ” Р°РЅР°С‚РѕРјРёС‡РµСЃРєРѕРµ СЃРµСЂРґС†Рµ, РѕРєСЂСѓР¶С‘РЅРЅРѕРµ Р°РЅРіРµР»Р°РјРё-С…СЂР°РЅРёС‚РµР»СЏРјРё, С‡С‚Рѕ СЃРѕР·РґР°С‘С‚ Р°С‚РјРѕСЃС„РµСЂСѓ РјРёСЃС‚РёРєРё, Р·Р°С‰РёС‚С‹ Рё РІРЅСѓС‚СЂРµРЅРЅРµР№ СЃРёР»С‹. РљРѕРЅС‚СЂР°СЃС‚ Р±РµР»РѕР№ РіСЂР°С„РёРєРё Рё РєСЂР°СЃРЅРѕРіРѕ СЃРµСЂРґС†Р° РґРµР»Р°РµС‚ РїСЂРёРЅС‚ РіР»СѓР±РѕРєРёРј Рё СЌРјРѕС†РёРѕРЅР°Р»СЊРЅС‹Рј, Р° РєР°Р»Р»РёРіСЂР°С„РёС‡РµСЃРєРёР№ С‚РµРєСЃС‚ РґРѕР±Р°РІР»СЏРµС‚ СЌСЃС‚РµС‚РёРєРё streetwearРё gothic-style.
+РњРѕРґРµР»СЊ РІС‹РїРѕР»РЅРµРЅР° РІ СѓРЅРёРІРµСЂСЃР°Р»СЊРЅРѕРј oversize/baseСЃРёР»СѓСЌС‚Рµ, РєРѕС‚РѕСЂС‹Р№ Р»РµРіРєРѕ СЃРѕС‡РµС‚Р°РµС‚СЃСЏ СЃ РїРѕРІСЃРµРґРЅРµРІРЅС‹РјРё Рё Р°РєС†РµРЅС‚РЅС‹РјРё РѕР±СЂР°Р·Р°РјРё. РџРѕРґС…РѕРґРёС‚ РґР»СЏ С‚РµС…, РєС‚Рѕ С†РµРЅРёС‚ СЃРёРјРІРѕР»РёР·Рј, РёСЃРєСѓСЃСЃС‚РІРѕ Рё СѓРЅРёРєР°Р»СЊРЅС‹Р№ РІРёР·СѓР°Р»СЊРЅС‹Р№ СЃС‚РёР»СЊ.
+РћСЃРѕР±РµРЅРЅРѕСЃС‚Рё:
+вЂў Р‘Р°Р·РѕРІС‹Р№ С‡С‘СЂРЅС‹Р№ С†РІРµС‚
+вЂў Р›РѕРіРѕС‚РёРї OBERР•G РЅР° РіСЂСѓРґРё
+вЂў РђСЂС‚-РїСЂРёРЅС‚ СЃ Р°РЅРіРµР»Р°РјРё Рё СЃРµСЂРґС†РµРј РЅР° СЃРїРёРЅРµ
+вЂў РњСЏРіРєРёР№ Рё РєРѕРјС„РѕСЂС‚РЅС‹Р№ РјР°С‚РµСЂРёР°Р»
+вЂў РЈРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ unisex С„Р°СЃРѕРЅ
+вЂў РЎРѕС‡РµС‚Р°РЅРёРµ gothic, vintage Рё streetwear СЌСЃС‚РµС‚РёРєРё
+«AgACAgIAAxkBAAIX-WoSA_xbR2nm2pDW3Wga06XEY804AAKgGGsbAY6QSO27c79Cu8QVAQADAgADdwADOwQ
