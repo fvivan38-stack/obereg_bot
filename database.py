@@ -673,11 +673,11 @@ def get_user_orders(user_id):
     conn.close()
     return result
 # database.py - добавьте в начало
-import pytz
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
-MOSCOW_TZ = pytz.timezone('Europe/Moscow')
+# Московское время (UTC+3)
+MOSCOW_OFFSET = timedelta(hours=3)
 
 def get_now_moscow():
     """Получить текущее время по Москве"""
-    return datetime.now(MOSCOW_TZ).isoformat()
+    return (datetime.now(timezone.utc) + MOSCOW_OFFSET).isoformat()
