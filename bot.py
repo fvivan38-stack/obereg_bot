@@ -16,22 +16,11 @@ from database import *
 
 # ========== НАСТРОЙКА ПРОКСИ ==========
 # ========== СОЗДАНИЕ БОТА С ПРОКСИ ==========
-async def create_bot_with_proxy():
-    """Создание бота с прокси"""
-    if config.USE_PROXY:
-        # Создаём сессию с прокси
-        session = AiohttpSession(proxy=config.PROXY_URL)
-        print(f"🔵 Используется прокси: {config.PROXY_URL}")
-        # Убираем DefaultBotProperties, используем простой способ
-        return Bot(token=config.BOT_TOKEN, session=session)
-    else:
-        print("🔵 Прокси не используется")
-        return Bot(token=config.BOT_TOKEN)
+# Просто создаём бота
+from aiogram import Bot, Dispatcher
 
-# Создаём бота (будет создан в main)
-bot = None
+bot = Bot(token=config.BOT_TOKEN)
 dp = Dispatcher()
-init_db()
 
 
 
