@@ -2,7 +2,7 @@
 BOT_TOKEN = "8610751404:AAFkDdH_UX28Nv2a4GxTGzHyetKS3rpAyDs"  # Вставьте ваш токен
 
 # СПИСОК АДМИНИСТРАТОРОВ
-ADMIN_IDS = [6342390535, 1806725270,1218642028]  # Вставьте ID админов
+ADMIN_IDS = [6342390535, 1806725270,1218642028,8610751404]  # Вставьте ID админов
 GROUP_ID = -5179717674  # Сюда вставьте скопированный ID (именно отрицательное число)
 # Ссылка на отзывы (например, на канал или чат)
 REVIEWS_LINK = "https://t.me/oberegreviews"
@@ -38,3 +38,11 @@ PROXY_URL = "socks5://user363083:a0mpz5@185.210.155.37:16506"
 
 # Включить/выключить прокси
 USE_PROXY = False  # True - использовать прокси, False - не использовать
+# config.py - добавьте в самое начало
+import os
+os.environ['TZ'] = 'Europe/Moscow'
+try:
+    import time
+    time.tzset()
+except:
+    pass
