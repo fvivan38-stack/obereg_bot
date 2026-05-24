@@ -10,7 +10,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton, LinkPreviewOptions
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InputMediaPhoto
-from aiogram.client.session.aiohttp import AiohttpSession
+
 import config
 from database import *
 
@@ -3149,19 +3149,8 @@ async def get_photo_id(message: types.Message):
 
 # ========== ЗАПУСК ==========
 async def main():
-    global bot
-    bot = await create_bot_with_proxy()
     print("✅ Бот запущен!")
     print(f"Администраторы: {config.ADMIN_IDS}")
-
-    # Проверяем, что бот может подключиться к Telegram
-    try:
-        me = await bot.get_me()
-        print(f"✅ Бот подключен: @{me.username}")
-    except Exception as e:
-        print(f"❌ Ошибка подключения: {e}")
-        return
-
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
